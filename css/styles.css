@@ -1,0 +1,172 @@
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(135deg, #bf86e0 0%, #d879a1 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    background: linear-gradient(135deg, #f8a1c4 0%, #f357a8 100%);
+    border-radius: 36px;
+    box-shadow: 0 8px 32px 0 #68093aec;
+    padding: 36px 28px 32px 28px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 650px;
+    min-width: 340px;
+    max-width: 95vw;
+    width: 470px;
+    position: relative;
+}
+
+.avatar {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #f357a8 60%, #f59dc2 100%);
+    margin-top: 18px;
+    margin-bottom: 18px;
+    box-shadow: 0 4px 24px 0 #f357a880;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.avatar::after {
+    content: "🌸";
+    font-size: 3rem;
+    position: absolute;
+    left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
+}
+.profile-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+}
+.title {
+    font-size: 2.3rem;
+    font-weight: 900;
+    margin: 0 0 10px 0;
+    background: linear-gradient(90deg, #ffb6d5 20%, #a685e2 60%, #7f53ac 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    letter-spacing: 2px;
+    text-align: center;
+    animation: fadeIn 1.2s;
+}
+
+.username {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #fff;
+    margin-bottom: 26px;
+    text-align: center;
+    opacity: 0.85;
+}
+
+.links-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.links-container ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.links-container li {
+    margin: 0;
+}
+
+.link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 15px 0px 15px 0;
+    background: linear-gradient(90deg, #f357a8 0%, #cb87f1 100%);
+    border: solid 1px;
+    border-radius: 30px;
+    color: #fff;
+    font-size: 1.15rem;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 0 2px 12px 0 #f357a830;
+    transition: 
+        background 0.3s cubic-bezier(.68,-0.55,.27,1.55),
+        color 0.3s cubic-bezier(.68,-0.55,.27,1.55),
+        transform 0.18s cubic-bezier(.68,-0.55,.27,1.55),
+        box-shadow 0.3s;
+    position: relative;
+    left: -10px;
+    top: 50px;
+    overflow: hidden;
+    cursor: pointer;
+    outline: none;
+    margin: 12px;
+}
+.link:hover, .link:focus {
+    background: linear-gradient(90deg, #e0aaff 0%, #f357a8 100%);
+    color: #f357a8;
+    transform: translateY(-3px) scale(1.04);
+    box-shadow: 0 6px 24px 0 #f357a850;
+}
+.link:active {
+    transform: scale(0.98);
+}
+.link.animated {
+    animation: popBtn 0.6s cubic-bezier(.68,-0.55,.27,1.55);
+}
+@keyframes popInExplosion {
+    0% {
+        opacity: 0;
+        transform: scale(0.3) rotate(-10deg);
+        filter: blur(8px) brightness(2);
+        box-shadow: 0 0 0 0 #fff0;
+    }
+    60% {
+        opacity: 1;
+        transform: scale(1.15) rotate(3deg);
+        filter: blur(0px) brightness(1.1);
+        box-shadow: 0 0 24px 8px #fff5;
+    }
+    80% {
+        transform: scale(0.95) rotate(-2deg);
+        filter: blur(0px) brightness(1);
+        box-shadow: 0 0 8px 2px #fff3;
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+        filter: blur(0px) brightness(1);
+        box-shadow: 0 0 0 0 #fff0;
+    }
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(40px);}
+    to { opacity: 1; transform: translateY(0);}
+}
+
+.fade-in-link {
+    opacity: 1 !important;
+    animation: popInExplosion 0.7s cubic-bezier(.68,-0.55,.27,1.55) forwards;
+}
+.link {
+    opacity: 0;
+    transform:  cale(0.3);
+    transition: opacity 0.7s, transform 0.7s;
+}
